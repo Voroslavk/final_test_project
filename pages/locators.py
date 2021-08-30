@@ -1,9 +1,8 @@
 from selenium.webdriver.common.by import By
-from .base_page import BasePage
 
 
 class MainPageLocators:
-    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    pass
 
 
 class LoginPageLocators:
@@ -16,9 +15,10 @@ class ProductPageLocators:
     ADD_TO_BIN_BUTTON = (By.CSS_SELECTOR, '[class="btn btn-lg btn-primary btn-add-to-basket"]')
     STAFF_NAME = (By.CSS_SELECTOR, '.product_main h1')
     STAFF_NAME_AFTER_ADD = (By.CSS_SELECTOR, '.alert:nth-child(1) .alertinner strong')
+    SUCCESS_MESSAGE = [By.CSS_SELECTOR, '#messages .alert:nth-child(1)']
+    DISAPPEARED_MESSAGE = (By.CSS_SELECTOR, '#messages .alert:nth-child(1)')
 
 
-
-
-
-
+class BasePageLocators:
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
