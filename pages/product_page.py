@@ -1,8 +1,8 @@
-from base_page import BasePage
+from pages.base_page import BasePage
 from locators import ProductPageLocators
 
 
-class BinPage(BasePage):
+class ProductPage(BasePage):
     def add_to_bin(self):
         addbutton = self.browser.find_element(*ProductPageLocators.ADD_TO_BIN_BUTTON)
         addbutton.click()

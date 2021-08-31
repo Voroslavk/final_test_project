@@ -2,7 +2,9 @@ from selenium.webdriver.common.by import By
 
 
 class MainPageLocators:
-    pass
+    BIN_BUTTON = (By.CSS_SELECTOR, '.btn-group .btn-default:nth-child(1)')
+    TEXT_OF_EMPTY_BIN = (By.CSS_SELECTOR, '#content_inner p')
+    COMPLETE_PURCHASE = (By.CSS_SELECTOR, '.col-sm-offset-8 a')
 
 
 class LoginPageLocators:
@@ -21,4 +23,9 @@ class ProductPageLocators:
 
 class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+
+
+class BinPageLocators:
+    GO_TO_HOME_FROM_BIN = (By.CSS_SELECTOR, ".breadcrumb li a")
+    CONTINUE_SHOPPING_FROM_BIN = (By.CSS_SELECTOR, "#content_inner p a")
+    WE_INSIDE_BASKET = (By.CSS_SELECTOR, ".page-header h1")
