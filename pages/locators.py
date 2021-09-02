@@ -11,6 +11,10 @@ class LoginPageLocators:
     LOGIN_URL = (By.CSS_SELECTOR, '[class="container-fluid page"] .page_inner')
     AUTH_BUT = (By.CSS_SELECTOR, '[name = "login_submit"]')
     REG_BUT = (By.CSS_SELECTOR, '[name="registration_submit"]')
+    EMAIL_FIELD = (By.CSS_SELECTOR, '[name="registration-email"]')
+    PASSWORD_FIELD = (By.CSS_SELECTOR, '[name="registration-password1"]')
+    CONF_PASS_FIELD = (By.CSS_SELECTOR, '[name="registration-password2"]')
+    CHECK_FOR_SIGN_IN = (By.CSS_SELECTOR, '.wicon')
 
 
 class ProductPageLocators:
@@ -23,9 +27,12 @@ class ProductPageLocators:
 
 class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
 
 class BinPageLocators:
     GO_TO_HOME_FROM_BIN = (By.CSS_SELECTOR, ".breadcrumb li a")
     CONTINUE_SHOPPING_FROM_BIN = (By.CSS_SELECTOR, "#content_inner p a")
     WE_INSIDE_BASKET = (By.CSS_SELECTOR, ".page-header h1")
+
+

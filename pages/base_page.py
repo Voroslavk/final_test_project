@@ -3,8 +3,8 @@ from selenium.common.exceptions import NoAlertPresentException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
-from locators import BasePageLocators
-from locators import MainPageLocators
+from .locators import BasePageLocators
+from .locators import MainPageLocators
 import math
 import time
 
@@ -56,11 +56,14 @@ class BasePage:
         return True
 
     def go_to_login_page(self):
-        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
-        link.click()
+        self.browser.find_element(*BasePageLocators.LOGIN_LINK).click()
 
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
 
     def go_to_the_bin(self):
-        binbutton = self.browser.find_element(*MainPageLocators.BIN_BUTTON).click(), "There is no bin button selector"
+        self.browser.find_element(*MainPageLocators.BIN_BUTTON).click(), "There is no bin button selector"
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"

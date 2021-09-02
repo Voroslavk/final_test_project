@@ -1,5 +1,6 @@
-from pages.base_page import BasePage
+from .base_page import BasePage
 from .locators import LoginPageLocators
+import time
 
 
 class LoginPage(BasePage):
@@ -22,3 +23,23 @@ class LoginPage(BasePage):
         assert self.is_element_present(*LoginPageLocators.REG_BUT), "Reg button should be here"
         # реализуйте проверку, что есть форма регистрации на странице
         assert True
+
+    def register_new_user(self):
+        emailcreation = str(time.time()) + "@fakemail.org"
+        passcreation = str(time.time()) + "9928934hjkjf"
+        self.browser.find_element(*LoginPageLocators.EMAIL_FIELD).send_keys(emailcreation)
+        self.browser.find_element(*LoginPageLocators.PASSWORD_FIELD).send_keys(passcreation)
+        self.browser.find_element(*LoginPageLocators.CONF_PASS_FIELD).send_keys(passcreation)
+
+    def click_button(self):
+        self.browser.find_element(*LoginPageLocators.REG_BUT).click()
+
+    def check_for_sign(self):
+        assert self.is_element_present(*LoginPageLocators.CHECK_FOR_SIGN_IN), "There no text"
+
+
+
+
+
+
+
